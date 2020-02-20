@@ -5,16 +5,92 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Street Food Produkter</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin 0;
+        }
+
+        img {
+            100%;
+        }
+
+
+        /* MENU */
+
+
+
+
+
+        /* SITE */
+
+        .mad {
+            cursor: pointer;
+        }
+
+        article img {
+            width: 100%;
+        }
+
+        .data-container {
+            display: grid;
+            grid-auto-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+    </style>
 </head>
 
+
+
+
+
+
 <body>
-    <section>
+
+    <header>
+        <div class="splashimage">
+            <img src="billeder/produkt_splash.jpeg" alt="Produkter splashbillede">
+        </div>
+    </header>
+
+
+
+    <nav class="menu">
+        <button class="filter" data-kategori="alle">Alt mad</button>
+        <button class="filter" data-kategori="Olaf's S'morebread">Olaf's S'morebread</button>
+        <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
+        <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
+        <button class="filter" data-kategori="Sussi's Sushi">Sussi's Sushi</button>
+        <button class="filter" data-kategori="drikkevarer">Drikkevarer</button>
+    </nav>
+
+
+
+
+
+    <section class="data-container"></section>
+
+    <template>
+        <article class="mad">
+            <img src="" alt="">
+            <h2 class="h2_navn"></h2>
+            <p class="pris"></p>
+
+        </article>
+    </template>
+
+
+
+
+
+    <!--
         <div class="sectionswrapper">
+
             <div class="splashimage">
                 <div class="burger"></div>
                 <div class="tekst"></div>
             </div>
+
+
             <div class="imageopdeler"></div>
             <div class="container">
                 <div class="col_narrow"></div>
@@ -23,18 +99,96 @@
                 </div>
                 <div class="op"></div>
             </div>
-
-
-
-
-
         </div>
+-->
+
+
+
+    <script>
+        const endpoint = "https://spreadsheets.google.com/feeds/list/1XFYyTvPy3jURzHBPV1ewCOI9jArC_oPQK4GWz7wbMRk/od6/public/values?alt=json";
+        let mad = {}
+        let filter = "alle";
+        const container = document.querySelector(".data-container");
+        const template = document.querySelector("template");
+
+
+        document.addEventListener("DOMContentLoaded", start);
 
 
 
 
-    </section>
-    <script src="script.js"></script>
+
+
+        function start() {
+            loadData();
+        }
+
+        async function loadData() {
+            const response = await fetch(endpoint);
+            personer = await response.json();
+
+            visMad();
+        }
+
+
+
+
+
+        function visMad() {
+            container.innerHTML = "";
+            mad.feed.entry.forEach(mad => {
+                if (filter == "alle" || filter == mad.gsx$kategori.$t) {
+
+                    //løb maden igennem og indsæt data i en template
+                    let klon = template.cloneNode(true).content;
+                    klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpeg`;
+                    klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
+                    klon.querySelector("h2").textContent = mad.gsx$navn.$t;
+                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
+                    klon.querySelector(".mad").addEventListener("click", () => {
+                        location.href = "detaljeside.html?id=" + mad.gsx$id.$t
+                    });
+                    container.appendChild(klon);
+                    addEventlistenersToButtons();
+                }
+            })
+        }
+
+
+
+
+        function addEventlistenersToButtons() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+
+
+
+
+        function filtrering() {
+            console.log("filter");
+            filter = this.dataset.kategori;
+            //            document.querySelector("h1").textContent = this.textContent;
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            visMad();
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
