@@ -5,23 +5,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Street Food</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .splashbilled {
+            object-fit: cover;
+            opacity: 50%;
+            object-position: center;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .burger {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 13vw;
+        }
+
+    </style>
 </head>
 
 <body>
-    <section id="splash">
-        <div class="sectionswrapper">
-            <div class="splashimage">
-                <div class="bruger"></div>
-                <div class="logo"></div>
-            </div>
-            <div class="imageopdeler"></div>
-            <div class="splashimage">
-                <div class="klikprodukter"></div>
-            </div>
-            <footer></footer>
+
+
+
+
+    <div class="container">
+        <img class="splashbilled" src="billeder/splash.jpg" alt="to personer sidder og spiser ved et bord og bæknesæt">
+
+        <div class="logo">
+            <img src="billeder/logo.svg">
         </div>
-    </section>
+        <div class="burger">
+            <img src="billeder/burgermenu.svg">
+        </div>
+
+    </div>
+    <div class="imageopdeler"></div>
+    <div class="klikprodukter">
+        <button>SE MADBODERNE</button></div>
+    <div class="splashimage">
+    </div>
+    <footer></footer>
 
 
 
