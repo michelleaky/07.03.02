@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Permanent+Marker&display=swap" rel="stylesheet">
     <title>Street Food Produkter</title>
     <style>
         body {
@@ -11,17 +12,72 @@
         }
 
         img {
-            100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
         }
 
 
+
         /* MENU */
+
+        button {
+            background-color: #D79C9C;
+        }
+
+        .menu {
+            display: block;
+            width: 150px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
 
 
 
 
 
         /* SITE */
+
+        .splashbillede img {
+            opacity: 50%;
+        }
+
+        .splashbillede {
+            position: relative;
+        }
+
+        .overskrift {
+            background-color: #D79C9C;
+            text-align: center;
+            width: 250px;
+            height: 45px;
+            border-radius: 12px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+
+
+
 
         .mad {
             cursor: pointer;
@@ -47,9 +103,14 @@
 <body>
 
     <header>
-        <div class="splashimage">
-            <img src="billeder/produkt_splash.jpeg" alt="Produkter splashbillede">
+        <div class="splashbillede">
+            <img src="billeder/produkt_splash.jpeg">
+            <div class="overskrift">
+                <h1>Madboder</h1>
+            </div>
         </div>
+
+
     </header>
 
 
@@ -60,7 +121,7 @@
         <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
         <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
         <button class="filter" data-kategori="Sussi's Sushi">Sussi's Sushi</button>
-        <button class="filter" data-kategori="drikkevarer">Drikkevarer</button>
+
     </nav>
 
 
