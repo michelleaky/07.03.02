@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Street Food</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
         main {
             display: grid;
@@ -53,7 +54,7 @@
         }
 
         .knap_madbod {
-            width: 18rem;
+            width: 20rem;
             height: 3rem;
             border-radius: 0.8rem;
             text-align: center;
@@ -92,7 +93,55 @@
         a {
             text-decoration: none;
             color: black;
+            font-family: 'Permanent Marker';
         }
+
+        .splashmadbod img {
+            object-fit: cover;
+            opacity: 50%;
+            object-position: right;
+            height: 100vh;
+        }
+
+        a:hover {
+            color: #d6c2c1;
+
+        }
+
+        @media only screen and (min-width: 320px) {
+            .splashbilled {
+                object-position: 87% 50%;
+            }
+
+            .logo {
+                width: 40%
+            }
+
+            @media only screen and (min-width: 375px) {
+                .splashbilled {
+                    object-position: 84% 50%;
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                .splashbilled {
+                    object-position: 84% 50%;
+                }
+
+                .logo {
+                    width: 30%
+                }
+
+                .imageopdeler {
+                    bottom: -13vh;
+                }
+
+                .knap_madbod {
+                    padding: 0.9rem;
+                    width: 36rem;
+                    height: 4rem;
+                }
+
     </style>
 </head>
 
@@ -105,7 +154,7 @@
         <img class="splashbilled" src="billeder/splash.jpg" alt="to personer sidder og spiser ved et bord og bæknesæt">
 
         <div class="logo">
-            <img src="billeder/logo.svg">
+            <img class="logoimg" src="billeder/logo.svg">
         </div>
         <div class="burger">
             <img src="billeder/burgermenu_hvid.svg">
@@ -121,7 +170,7 @@
             <a href="produkter.html">SE MADBODERNE</a>
         </div>
     </div>
-    <div class="splashimage">
+    <div class="splashmadbod">
         <img src="billeder/madbod.jpg" alt="pige med der står i madbod">
     </div>
     <footer></footer>
@@ -135,4 +184,6 @@
 
 
     </script>
-</body></html>
+</body>
+
+</html>
