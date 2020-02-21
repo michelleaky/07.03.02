@@ -27,11 +27,13 @@
         h1 {
             font-family: 'Permanent Marker', cursive;
             margin: 0;
+            font-size: calc(2rem + 2vw);
         }
 
         h2 {
             font-family: 'Lato', sans-serif;
-            margin: 0;
+            margin: 7px 0 0 0;
+            text-transform: uppercase;
         }
 
         p {
@@ -39,21 +41,33 @@
         }
 
         .pris {
-            margin: 0 0 5vw 0;
+            margin: 7px 0 10px 0;
+            font-size: 1.2rem;
         }
+
+
+
 
 
 
         /* MENU */
 
         button {
-            background-color: #D79C9C;
+            background-color: #d8d8d8;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 9px;
+        }
+
+        button:hover {
+            color: #D79C9C;
         }
 
         .menu {
-            margin: 0 auto;
+            margin: 20px auto;
             display: block;
-            width: 150px;
+            width: 250px;
 
             text-align: center;
         }
@@ -67,32 +81,40 @@
 
         /* SITE */
 
-        .splashbillede img {
-            opacity: 50%;
-            margin: 0 auto;
+        .splash {
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
         }
 
+
         .splashbillede {
-            position: relative;
+            background-image: url(billeder/produkt_splash.jpg);
+            background-size: 100%;
+            opacity: 50%;
+            background-repeat: no-repeat;
+            display: grid;
         }
+
+
 
         .overskrift {
             background-color: #D79C9C;
             text-align: center;
-            width: 250px;
-            height: 45px;
+            padding: 0 30px;
             border-radius: 12px;
+            justify-self: center;
+            align-self: center;
 
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
+
+
 
 
 
         .mad {
             cursor: pointer;
+            margin: 15px;
         }
 
         article img {
@@ -116,28 +138,22 @@
 
 
 
-    <header>
+    <section class="splash">
         <div class="splashbillede">
-            <img src="billeder/produkt_splash.jpg">
             <div class="overskrift">
                 <h1>Madboder</h1>
             </div>
         </div>
+        <nav class="menu">
+            <button class="filter" data-kategori="alle">Alt mad</button>
+            <button class="filter" data-kategori="Olaf's S'morebread">Olaf's S'morebread</button>
+            <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
+            <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
+            <button class="filter" data-kategori="Sussi's Sushi">Sussi's Sushi</button>
 
-    </header>
+        </nav>
 
-
-
-
-
-    <nav class="menu">
-        <button class="filter" data-kategori="alle">Alt mad</button>
-        <button class="filter" data-kategori="Olaf's S'morebread">Olaf's S'morebread</button>
-        <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
-        <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
-        <button class="filter" data-kategori="Sussi's Sushi">Sussi's Sushi</button>
-
-    </nav>
+    </section>
 
 
 
@@ -209,7 +225,7 @@
                     klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpg`;
                     klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
                     klon.querySelector("h2").textContent = mad.gsx$navn.$t;
-                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t;
+                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
                     klon.querySelector(".mad").addEventListener("click", () => {
                         location.href = "detaljeside.html?id=" + mad.gsx$id.$t
                     });
