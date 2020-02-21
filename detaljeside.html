@@ -4,9 +4,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Detaljeside</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Permanent+Marker&display=swap" rel="stylesheet">
     <style>
+        .boks {
+            background-color: #8483B7;
+            width: 550px;
+            height: 80px;
+            border-radius: 10px;
+            text-align: center;
+        }
 
+        .ret_overskrift {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3rem;
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .pris {
+            font-weight: 700;
+        }
+
+        img {
+            width: 100%;
+        }
 
     </style>
 </head>
@@ -14,16 +38,26 @@
 
 <body>
 
-    <section id="detale">
+
+    <header>
+        <img src="">
+        <nav class="burger">☰</nav>
+    </header>
+
+    <section id="detalje">
         <button>
             ⬅︎
         </button>
-        <div class="ret_overskrift"></div>
+        <div class="boks">
+            <p class="ret_overskrift">HEJSA OVERSKRIIFT</p>
+        </div>
         <img src="">
         <h1></h1>
         <p class="kort"></p>
-        <p class="lang"></p>
         <p class="pris">Pris: </p>
+
+        <p>______________________________________________________________________________</p>
+        <p class="lang"></p>
     </section>
 
 
@@ -67,6 +101,7 @@
         }
 
         function goBack() {
+            console.log("tilbage");
             history.back();
         }
 
