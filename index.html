@@ -33,6 +33,8 @@
 
         .container {
             position: relative;
+            width: 100vw;
+            height: 100vh;
         }
 
         .logo {
@@ -78,6 +80,7 @@
             position: absolute;
             bottom: -11vh;
             width: 100vw;
+            z-index: 10;
         }
 
         .klikprodukter {
@@ -86,6 +89,10 @@
             background-color: #C4C4C4;
         }
 
+        a {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 
@@ -101,7 +108,7 @@
             <img src="billeder/logo.svg">
         </div>
         <div class="burger">
-            <img src="billeder/burgermenu.svg">
+            <img src="billeder/burgermenu_hvid.svg">
         </div>
         <div class="imageopdeler">
             <img src="billeder/lyger.svg">
@@ -110,7 +117,9 @@
     </div>
 
     <div class="klikprodukter">
-        <div class="knap_madbod">SE MADBODERNE</div>
+        <div class="knap_madbod">
+            <a href="produkter.html">SE MADBODERNE</a>
+        </div>
     </div>
     <div class="splashimage">
         <img src="billeder/madbod.jpg" alt="pige med der står i madbod">
@@ -126,6 +135,4 @@
 
 
     </script>
-</body>
-
-</html>
+</body></html>
