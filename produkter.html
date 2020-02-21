@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato|Permanent+Marker&display=swap" rel="stylesheet">
     <title>Street Food Produkter</title>
-<<<<<<< HEAD
 
 
 
-    <style>
-=======
+
+
+
+
     <style>
         body {
             margin 0;
@@ -44,10 +45,11 @@
         }
 
         .menu {
+            margin: 0 auto;
             display: block;
             width: 150px;
-            margin: 0;
-            padding: 0;
+
+            text-align: center;
         }
 
 
@@ -97,7 +99,6 @@
             display: grid;
             grid-auto-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
->>>>>>> origin/master
 
     </style>
 </head>
@@ -108,23 +109,20 @@
 
 
 <body>
-<<<<<<< HEAD
-    <section id="start">
 
 
-        <main>
-=======
 
     <header>
         <div class="splashbillede">
-            <img src="billeder/produkt_splash.jpeg">
+            <img src="billeder/produkt_splash.jpg">
             <div class="overskrift">
                 <h1>Madboder</h1>
             </div>
         </div>
 
-
     </header>
+
+
 
 
 
@@ -156,30 +154,8 @@
 
 
 
-    <!--
-        <div class="sectionswrapper">
-
->>>>>>> origin/master
-            <div class="splashimage">
-
-                <div class="burger"></div>
-                <div class="tekst"></div>
-            </div>
 
 
-            <div class="imageopdeler"></div>
-            <div class="container">
-                <div class="col_narrow"></div>
-                <div class="col_wide">
-                    <h1></h1>
-                </div>
-                <div class="op"></div>
-            </div>
-<<<<<<< HEAD
-        </main>
-=======
-        </div>
--->
 
 
 
@@ -198,13 +174,18 @@
 
 
 
+
         function start() {
             loadData();
+            console.log("start");
         }
+
 
         async function loadData() {
             const response = await fetch(endpoint);
-            personer = await response.json();
+            mad = await response.json();
+            console.log("loadData")
+
 
             visMad();
         }
@@ -218,12 +199,13 @@
             mad.feed.entry.forEach(mad => {
                 if (filter == "alle" || filter == mad.gsx$kategori.$t) {
 
+
                     //løb maden igennem og indsæt data i en template
                     let klon = template.cloneNode(true).content;
-                    klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpeg`;
+                    klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpg`;
                     klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
                     klon.querySelector("h2").textContent = mad.gsx$navn.$t;
-                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
+                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t;
                     klon.querySelector(".mad").addEventListener("click", () => {
                         location.href = "detaljeside.html?id=" + mad.gsx$id.$t
                     });
@@ -231,6 +213,7 @@
                     addEventlistenersToButtons();
                 }
             })
+
         }
 
 
@@ -246,10 +229,11 @@
 
 
 
+
         function filtrering() {
             console.log("filter");
             filter = this.dataset.kategori;
-            //            document.querySelector("h1").textContent = this.textContent;
+            // document.querySelector("h1").textContent = this.textContent;
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.classList.remove("valgt");
             })
@@ -259,7 +243,6 @@
 
     </script>
 
->>>>>>> origin/master
 
 
 
