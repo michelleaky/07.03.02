@@ -15,7 +15,8 @@
 
     <style>
         body {
-            margin 0;
+            margin: 0;
+            background-color: #d8d8d8;
         }
 
         img {
@@ -30,10 +31,15 @@
 
         h2 {
             font-family: 'Lato', sans-serif;
+            margin: 0;
         }
 
         p {
             font-family: 'Lato', sans-serif;
+        }
+
+        .pris {
+            margin: 0 0 5vw 0;
         }
 
 
@@ -63,6 +69,7 @@
 
         .splashbillede img {
             opacity: 50%;
+            margin: 0 auto;
         }
 
         .splashbillede {
@@ -80,10 +87,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
         }
-
-
 
 
 
@@ -143,7 +147,7 @@
 
     <template>
         <article class="mad">
-            <img src="" alt="">
+            <img class="image" src="" alt="">
             <h2 class="h2_navn"></h2>
             <p class="pris"></p>
 
@@ -197,7 +201,7 @@
         function visMad() {
             container.innerHTML = "";
             mad.feed.entry.forEach(mad => {
-                if (filter == "alle" || filter == mad.gsx$kategori.$t) {
+                if (filter == "alle" || filter == mad.gsx$madbod.$t) {
 
 
                     //løb maden igennem og indsæt data i en template
