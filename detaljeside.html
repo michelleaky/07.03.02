@@ -17,6 +17,8 @@
             height: 80px;
             border-radius: 10px;
             text-align: center;
+
+            margin: 5px 0 30px 0;
         }
 
         .ret_overskrift {
@@ -71,7 +73,7 @@
             ⬅︎
         </button>
         <div class="boks">
-            <p class="ret_overskrift">HEJSA OVERSKRIIFT</p>
+            <p class="ret_overskrift"></p>
         </div>
         <img src="">
         <h1></h1>
@@ -113,11 +115,12 @@
                 console.log(ret);
                 //Det som sker i if sætningen er, at det id fra json skal sammenlignes med den id vi definerede i toppen.
                 if (ret.gsx$id.$t == id) {
+                    detalje.querySelector(".ret_overskrift").textContent = ret.gsx$madbod.$t;
+                    detalje.querySelector("img").src = `billeder/${ret.gsx$billede.$t}.jpg`;
                     detalje.querySelector("h1").textContent = ret.gsx$navn.$t;
-                    detalje.querySelector("img").src = `imgs/${ret.gsx$billede.$t}.jpg`;
-                    detalje.querySelector("p").textContent = ret.gsx$kort.$t;
-                    detalje.querySelector("p").textContent = ret.gsx$lang.$t;
-                    detalje.querySelector("p+p").textContent = ret.gsx$pris.$t;
+                    detalje.querySelector(".kort").textContent = ret.gsx$kort.$t;
+                    detalje.querySelector(".pris").textContent += ret.gsx$pris.$t;
+                    detalje.querySelector(".lang").textContent += ret.gsx$lang.$t;
                 };
             });
         }
