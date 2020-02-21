@@ -38,10 +38,11 @@
         }
 
         .menu {
+            margin: 0 auto;
             display: block;
             width: 150px;
-            margin: 0;
-            padding: 0;
+
+            text-align: center;
         }
 
 
@@ -182,11 +183,14 @@
 
         function start() {
             loadData();
+            console.log("start");
         }
+
 
         async function loadData() {
             const response = await fetch(endpoint);
-            personer = await response.json();
+            mad = await response.json();
+            console.log("loadData")
 
             visMad();
         }
@@ -202,10 +206,10 @@
 
                     //løb maden igennem og indsæt data i en template
                     let klon = template.cloneNode(true).content;
-                    klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpeg`;
+                    klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpg`;
                     klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
                     klon.querySelector("h2").textContent = mad.gsx$navn.$t;
-                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
+                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t;
                     klon.querySelector(".mad").addEventListener("click", () => {
                         location.href = "detaljeside.html?id=" + mad.gsx$id.$t
                     });
@@ -227,11 +231,10 @@
 
 
 
-
         function filtrering() {
             console.log("filter");
             filter = this.dataset.kategori;
-            //            document.querySelector("h1").textContent = this.textContent;
+            // document.querySelector("h1").textContent = this.textContent;
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.classList.remove("valgt");
             })
