@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato|Permanent+Marker&display=swap" rel="stylesheet">
     <title>Street Food Produkter</title>
-<<<<<<< HEAD
 
-
-
-    <style>
-=======
     <style>
         body {
             margin 0;
@@ -97,7 +92,8 @@
             display: grid;
             grid-auto-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
->>>>>>> origin/master
+
+        >>>>>>>origin/master
 
     </style>
 </head>
@@ -108,55 +104,54 @@
 
 
 <body>
-<<<<<<< HEAD
-    <section id="start">
+    <<<<<<< HEAD <section id="start">
 
 
         <main>
-=======
+            =======
 
-    <header>
-        <div class="splashbillede">
-            <img src="billeder/produkt_splash.jpeg">
-            <div class="overskrift">
-                <h1>Madboder</h1>
-            </div>
-        </div>
-
-
-    </header>
+            <header>
+                <div class="splashbillede">
+                    <img src="billeder/produkt_splash.jpeg">
+                    <div class="overskrift">
+                        <h1>Madboder</h1>
+                    </div>
+                </div>
 
 
-
-    <nav class="menu">
-        <button class="filter" data-kategori="alle">Alt mad</button>
-        <button class="filter" data-kategori="Olaf's S'morebread">Olaf's S'morebread</button>
-        <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
-        <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
-        <button class="filter" data-kategori="Sussi's Sushi">Sussi's Sushi</button>
-
-    </nav>
+            </header>
 
 
 
+            <nav class="menu">
+                <button class="filter" data-kategori="alle">Alt mad</button>
+                <button class="filter" data-kategori="Olaf's S'morebread">Olaf's S'morebread</button>
+                <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
+                <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
+                <button class="filter" data-kategori="Sussi's Sushi">Sussi's Sushi</button>
 
-
-    <section class="data-container"></section>
-
-    <template>
-        <article class="mad">
-            <img src="" alt="">
-            <h2 class="h2_navn"></h2>
-            <p class="pris"></p>
-
-        </article>
-    </template>
+            </nav>
 
 
 
 
 
-    <!--
+            <section class="data-container"></section>
+
+            <template>
+                <article class="mad">
+                    <img src="" alt="">
+                    <h2 class="h2_navn"></h2>
+                    <p class="pris"></p>
+
+                </article>
+            </template>
+
+
+
+
+
+            <!--
         <div class="sectionswrapper">
 
 >>>>>>> origin/master
@@ -183,83 +178,83 @@
 
 
 
-    <script>
-        const endpoint = "https://spreadsheets.google.com/feeds/list/1XFYyTvPy3jURzHBPV1ewCOI9jArC_oPQK4GWz7wbMRk/od6/public/values?alt=json";
-        let mad = {}
-        let filter = "alle";
-        const container = document.querySelector(".data-container");
-        const template = document.querySelector("template");
+            <script>
+                const endpoint = "https://spreadsheets.google.com/feeds/list/1XFYyTvPy3jURzHBPV1ewCOI9jArC_oPQK4GWz7wbMRk/od6/public/values?alt=json";
+                let mad = {}
+                let filter = "alle";
+                const container = document.querySelector(".data-container");
+                const template = document.querySelector("template");
 
 
-        document.addEventListener("DOMContentLoaded", start);
-
-
-
-
-
-
-        function start() {
-            loadData();
-        }
-
-        async function loadData() {
-            const response = await fetch(endpoint);
-            personer = await response.json();
-
-            visMad();
-        }
+                document.addEventListener("DOMContentLoaded", start);
 
 
 
 
 
-        function visMad() {
-            container.innerHTML = "";
-            mad.feed.entry.forEach(mad => {
-                if (filter == "alle" || filter == mad.gsx$kategori.$t) {
 
-                    //løb maden igennem og indsæt data i en template
-                    let klon = template.cloneNode(true).content;
-                    klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpeg`;
-                    klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
-                    klon.querySelector("h2").textContent = mad.gsx$navn.$t;
-                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
-                    klon.querySelector(".mad").addEventListener("click", () => {
-                        location.href = "detaljeside.html?id=" + mad.gsx$id.$t
-                    });
-                    container.appendChild(klon);
-                    addEventlistenersToButtons();
+                function start() {
+                    loadData();
                 }
-            })
-        }
 
+                async function loadData() {
+                    const response = await fetch(endpoint);
+                    personer = await response.json();
 
-
-
-        function addEventlistenersToButtons() {
-            document.querySelectorAll(".filter").forEach(elm => {
-                elm.addEventListener("click", filtrering);
-            })
-        }
+                    visMad();
+                }
 
 
 
 
 
-        function filtrering() {
-            console.log("filter");
-            filter = this.dataset.kategori;
-            //            document.querySelector("h1").textContent = this.textContent;
-            document.querySelectorAll(".filter").forEach(elm => {
-                elm.classList.remove("valgt");
-            })
-            this.classList.add("valgt");
-            visMad();
-        }
+                function visMad() {
+                    container.innerHTML = "";
+                    mad.feed.entry.forEach(mad => {
+                        if (filter == "alle" || filter == mad.gsx$kategori.$t) {
 
-    </script>
+                            //løb maden igennem og indsæt data i en template
+                            let klon = template.cloneNode(true).content;
+                            klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpeg`;
+                            klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
+                            klon.querySelector("h2").textContent = mad.gsx$navn.$t;
+                            klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
+                            klon.querySelector(".mad").addEventListener("click", () => {
+                                location.href = "detaljeside.html?id=" + mad.gsx$id.$t
+                            });
+                            container.appendChild(klon);
+                            addEventlistenersToButtons();
+                        }
+                    })
+                }
 
->>>>>>> origin/master
+
+
+
+                function addEventlistenersToButtons() {
+                    document.querySelectorAll(".filter").forEach(elm => {
+                        elm.addEventListener("click", filtrering);
+                    })
+                }
+
+
+
+
+
+                function filtrering() {
+                    console.log("filter");
+                    filter = this.dataset.kategori;
+                    //            document.querySelector("h1").textContent = this.textContent;
+                    document.querySelectorAll(".filter").forEach(elm => {
+                        elm.classList.remove("valgt");
+                    })
+                    this.classList.add("valgt");
+                    visMad();
+                }
+
+            </script>
+
+            >>>>>>> origin/master
 
 
 
