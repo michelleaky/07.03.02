@@ -13,6 +13,7 @@
 
         img {
             width: 100%;
+
         }
 
         * {
@@ -26,7 +27,8 @@
         .splashbilled {
             object-fit: cover;
             opacity: 50%;
-            object-position: center;
+            object-position: right;
+            height: 100vh;
         }
 
         .container {
@@ -42,9 +44,46 @@
 
         .burger {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 13vw;
+            top: 2vh;
+            right: 2vw;
+            width: 11vw;
+            color: white;
+        }
+
+        .knap_madbod {
+            width: 18rem;
+            height: 3rem;
+            border-radius: 0.8rem;
+            text-align: center;
+            margin: auto;
+            padding: 0.6rem;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.9rem;
+            font-weight: 200;
+            margin-top: 0px;
+            transition: transform 1s;
+            background-color: #D8F2E1;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .imageopdeler {
+            position: absolute;
+            bottom: -11vh;
+            width: 100vw;
+        }
+
+        .klikprodukter {
+            height: 38vh;
+            position: relative;
+            background-color: #C4C4C4;
         }
 
     </style>
@@ -64,12 +103,17 @@
         <div class="burger">
             <img src="billeder/burgermenu.svg">
         </div>
+        <div class="imageopdeler">
+            <img src="billeder/lyger.svg">
+        </div>
 
     </div>
-    <div class="imageopdeler"></div>
+
     <div class="klikprodukter">
-        <button>SE MADBODERNE</button></div>
+        <div class="knap_madbod">SE MADBODERNE</div>
+    </div>
     <div class="splashimage">
+        <img src="billeder/madbod.jpg" alt="pige med der står i madbod">
     </div>
     <footer></footer>
 
