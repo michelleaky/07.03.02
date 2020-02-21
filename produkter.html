@@ -16,12 +16,12 @@
     <style>
         body {
             margin: 0;
-            background-color: #d8d8d8;
+
         }
 
         img {
             width: 100%;
-            height: 100%;
+
         }
 
         h1 {
@@ -53,11 +53,16 @@
         /* MENU */
 
         button {
-            background-color: #d8d8d8;
+            background-color: white;
             border: none;
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             padding: 9px;
+            border-bottom: 1px solid black;
+        }
+
+        button:last-child {
+            border-bottom: none;
         }
 
         button:hover {
@@ -67,10 +72,13 @@
         .menu {
             margin: 20px auto;
             display: block;
-            width: 250px;
+            width: 200px;
 
             text-align: center;
+
         }
+
+
 
 
 
@@ -82,18 +90,17 @@
         /* SITE */
 
         .splash {
-            height: 100vh;
+            height: 50vh;
             display: grid;
-            grid-template-rows: 1fr 1fr;
         }
 
 
         .splashbillede {
             background-image: url(billeder/produkt_splash.jpg);
-            background-size: 100%;
-            opacity: 50%;
+            background-size: cover;
             background-repeat: no-repeat;
             display: grid;
+            background-position: center;
         }
 
 
@@ -105,10 +112,7 @@
             border-radius: 12px;
             justify-self: center;
             align-self: center;
-
         }
-
-
 
 
 
@@ -123,9 +127,20 @@
 
         .data-container {
             display: grid;
-            grid-auto-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            margin: 0 2.5vw;
         }
 
+        .section_menu {
+            display: grid;
+
+        }
+
+        @media screen and (min-width: 768px) {
+            .section_menu {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
     </style>
 </head>
 
@@ -144,23 +159,30 @@
                 <h1>Madboder</h1>
             </div>
         </div>
+
+    </section>
+
+
+    <main class="section_menu">
         <nav class="menu">
             <button class="filter" data-kategori="alle">Alt mad</button>
             <button class="filter" data-kategori="Olaf's S'morebread">Olaf's S'morebread</button>
             <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
             <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
             <button class="filter" data-kategori="Sussi's Sushi">Sussi's Sushi</button>
-
         </nav>
 
-    </section>
 
 
 
 
 
-    <section class="data-container"></section>
 
+
+
+
+        <section class="data-container"></section>
+    </main>
     <template>
         <article class="mad">
             <img class="image" src="" alt="">
@@ -260,7 +282,6 @@
             this.classList.add("valgt");
             visMad();
         }
-
     </script>
 
 
@@ -272,6 +293,4 @@
 
 
 
-</body>
-
-</html>
+</body></html>
