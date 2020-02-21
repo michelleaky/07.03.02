@@ -15,7 +15,8 @@
 
     <style>
         body {
-            margin 0;
+            margin: 0;
+            background-color: #d8d8d8;
         }
 
         img {
@@ -30,10 +31,15 @@
 
         h2 {
             font-family: 'Lato', sans-serif;
+            margin: 0;
         }
 
         p {
             font-family: 'Lato', sans-serif;
+        }
+
+        .pris {
+            margin: 0 0 5vw 0;
         }
 
 
@@ -63,6 +69,7 @@
 
         .splashbillede img {
             opacity: 50%;
+            margin: 0 auto;
         }
 
         .splashbillede {
@@ -80,10 +87,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
         }
-
-
 
 
 
@@ -143,7 +147,7 @@
 
     <template>
         <article class="mad">
-            <img src="" alt="">
+            <img class="image" src="" alt="">
             <h2 class="h2_navn"></h2>
             <p class="pris"></p>
 
@@ -182,101 +186,64 @@
 
 
         async function loadData() {
-                const response = await fetch(endpoint);
-                mad = await response.json();
-                console.log("loadData")
+            const response = await fetch(endpoint);
+            mad = await response.json();
+            console.log("loadData")
 
 
-                function start() {
-                    loadData();
+            visMad();
+        }
+
+
+
+
+
+        function visMad() {
+            container.innerHTML = "";
+            mad.feed.entry.forEach(mad => {
+                if (filter == "alle" || filter == mad.gsx$madbod.$t) {
+
+
+                    //løb maden igennem og indsæt data i en template
+                    let klon = template.cloneNode(true).content;
+                    klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpg`;
+                    klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
+                    klon.querySelector("h2").textContent = mad.gsx$navn.$t;
+                    klon.querySelector(".pris").textContent += mad.gsx$pris.$t;
+                    klon.querySelector(".mad").addEventListener("click", () => {
+                        location.href = "detaljeside.html?id=" + mad.gsx$id.$t
+                    });
+                    container.appendChild(klon);
+                    addEventlistenersToButtons();
                 }
+            })
 
-
-
-                async function loadData() {
-                    const response = await fetch(endpoint);
-                    personer = await response.json();
-
-
-                    visMad();
-                }
+        }
 
 
 
 
-
-                function visMad() {
-                    container.innerHTML = "";
-                    mad.feed.entry.forEach(mad => {
-                        if (filter == "alle" || filter == mad.gsx$kategori.$t) {
-
-
-                            //løb maden igennem og indsæt data i en template
-                            let klon = template.cloneNode(true).content;
-                            klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpg`;
-                            klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
-                            klon.querySelector("h2").textContent = mad.gsx$navn.$t;
-                            klon.querySelector(".pris").textContent += mad.gsx$pris.$t;
-                            klon.querySelector(".mad").addEventListener("click", () => {
-                                location.href = "detaljeside.html?id=" + mad.gsx$id.$t
-                            });
-                            container.appendChild(klon);
-                            addEventlistenersToButtons();
-
-
-                            //løb maden igennem og indsæt data i en template
-                            let klon = template.cloneNode(true).content;
-                            klon.querySelector("img").src = `billeder/${mad.gsx$billede.$t}.jpeg`;
-                            klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
-                            klon.querySelector("h2").textContent = mad.gsx$navn.$t;
-                            klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
-                            klon.querySelector(".mad").addEventListener("click", () => {
-                                location.href = "detaljeside.html?id=" + mad.gsx$id.$t
-                            });
-                            container.appendChild(klon);
-                            addEventlistenersToButtons();
-                        }
-                    })
-
-                }
-
-
-
-
-                function addEventlistenersToButtons() {
-                    document.querySelectorAll(".filter").forEach(elm => {
-                        elm.addEventListener("click", filtrering);
-                    })
-                }
+        function addEventlistenersToButtons() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
 
 
 
 
 
 
-                function filtrering() {
-                    console.log("filter");
-                    filter = this.dataset.kategori;
-                    // document.querySelector("h1").textContent = this.textContent;
-                    document.querySelectorAll(".filter").forEach(elm => {
-                        elm.classList.remove("valgt");
-                    })
-                    this.classList.add("valgt");
-                    visMad();
-                }
-
-
-
-                function filtrering() {
-                    console.log("filter");
-                    filter = this.dataset.kategori;
-                    //            document.querySelector("h1").textContent = this.textContent;
-                    document.querySelectorAll(".filter").forEach(elm => {
-                        elm.classList.remove("valgt");
-                    })
-                    this.classList.add("valgt");
-                    visMad();
-                }
+        function filtrering() {
+            console.log("filter");
+            filter = this.dataset.kategori;
+            // document.querySelector("h1").textContent = this.textContent;
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            visMad();
+        }
 
     </script>
 
