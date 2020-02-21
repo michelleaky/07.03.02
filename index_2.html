@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Food</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        /*
+        main {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        }
+*/
+
+        img {
+            width: 100%;
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* grid med top */
+
+        #top {
+            display: grid;
+            grid-column: repeat(1, 1fr);
+            grid-template-rows: 70px auto 100px;
+        }
+
+        #top {
+            height: 100vh;
+            background-image: url(billeder/splash.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        header {
+            border: 1px solid black;
+            justify-self: flex-end;
+        }
+
+        header img {
+            width: 70px;
+            align-self: flex-end;
+        }
+
+        main {
+            border: 1px solid red;
+            justify-content: center;
+        }
+
+        main img {
+            width: 200px;
+            align-self: center;
+            margin: 0 auto;
+
+        }
+
+        #footer_top {
+            border: 1px solid green;
+            margin-top: -49px;
+        }
+
+        /* section bottom */
+        #bottom {
+            display: grid;
+            grid-column: repeat(1, 1fr);
+            grid-template-rows: 200px auto 300px;
+        }
+
+        #klik {
+            border: 1px solid pink;
+        }
+
+        #image {
+            border: 1px solid yellow;
+        }
+
+        #footer_bottom {
+            border: 1px solid blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <section id="top">
+        <header>
+            <img src="billeder/burgermenu_hvid.svg">
+        </header>
+        <main>
+            <img src="billeder/logo.svg">
+        </main>
+        <footer id="footer_top">
+            <img src="billeder/lyger_3.svg">
+        </footer>
+    </section>
+    <section id="bottom">
+        <div id="klik">
+            <div id="knap"></div>
+        </div>
+        <div id="image"></div>
+        <footer id="footer_bottom"></footer>
+    </section>
+
+
+
+
+    <footer></footer>
+
+    <script>
+
+
+
+    </script>
+</body>
+
+</html>
