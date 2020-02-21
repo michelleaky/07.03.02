@@ -7,14 +7,24 @@
     <title>Detaljeside</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Permanent+Marker&display=swap" rel="stylesheet">
     <style>
+        button {
+            background-color: #8483B7;
+            padding: 5px 20px 5px 20px;
+            font-size: 2rem;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
         #detalje {
             margin: 200px 0 0 0;
         }
 
         .boks {
             background-color: #8483B7;
-            width: 550px;
-            height: 80px;
+            width: 450px;
+            height: 60px;
             border-radius: 10px;
             text-align: center;
 
@@ -23,7 +33,7 @@
 
         .ret_overskrift {
             font-family: 'Permanent Marker', cursive;
-            font-size: 3rem;
+            font-size: 2.5rem;
         }
 
         p {
@@ -52,6 +62,68 @@
             width: 10vw;
         }
 
+        .lang {
+            max-width: 700px;
+            margin: 0 50px 0 0;
+        }
+
+        li {
+            list-style-type: none;
+            line-height: 30px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.7rem;
+
+        }
+
+
+        .wrap_footer {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px 30px 30px 0;
+        }
+
+        .col_footer {
+            flex-grow: 1;
+            flex-basis: 300px;
+            margin-top: 1.8rem;
+            text-align: center;
+
+        }
+
+
+        /*
+        @media only screen and (min-width: 500px) {
+        .mad_billede {
+        width: 90%;
+        }
+
+        .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+        .col {
+        flex-grow: 1;
+        flex-basis: 200px;
+        }
+        }
+*/
+
+
+        .mad_billede {
+            width: 90%;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col {
+            flex-grow: 1;
+            flex-basis: 400px;
+        }
+
     </style>
 </head>
 
@@ -75,14 +147,41 @@
         <div class="boks">
             <p class="ret_overskrift"></p>
         </div>
-        <img src="">
-        <h1></h1>
-        <p class="kort"></p>
-        <p class="pris">Pris: </p>
+        <div class="wrapper">
+            <div class="col">
+                <img class="mad_billede" src=""></div>
+            <div class="col">
+                <h1></h1>
+                <p class="kort"></p>
+                <p class="pris">Pris: </p>
 
-        <p>______________________________________________________________________________</p>
-        <p class="lang"></p>
+                <p>__________________________________________________________________</p>
+                <p class="lang"></p>
+            </div>
+        </div>
     </section>
+
+
+
+
+    <div class="wrap_footer">
+        <div class="col_footer">
+            <ul>
+                <li><b>Kontakt os</b></li>
+                <li>Tlf: +45 99999999</li>
+                <li>Mail: lygtenstreetfood@gmail.com</li>
+                <li>Lygten 16 - 2400 København</li>
+            </ul>
+        </div>
+        <div class="col_footer">
+            <ul>
+                <li><b>Åbningstider:</b></li>
+                <li>Søndag - Onsdag: kl. 14:00 - 20:00</li>
+                <li>Torsdag: kl. 14:00 - 22:00</li>
+                <li>Fredag - Lørdag: kl. 12:00 - 01:00</li>
+            </ul>
+        </div>
+    </div>
 
 
     <script>
