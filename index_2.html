@@ -28,7 +28,7 @@
         h1 {
             font-family: 'Permanent Marker', cursive;
             margin: 0;
-            font-size: calc(2rem + 2vw);
+            font-size: calc(1.5rem + 2vw);
         }
 
         h2 {
@@ -106,7 +106,18 @@
 
         #image {}
 
-        #footer_bottom {}
+        #footer_bottom {
+            padding-top: 30px;
+            background-color: #EDEDED;
+        }
+
+        #footer_bottom main img {
+            width: 120px;
+            align-self: center;
+            margin: 0 auto;
+        }
+
+
 
         .overskrift {
             background-color: #D8F2E1;
@@ -117,13 +128,22 @@
             align-self: center;
             transition: 0.5s;
             cursor: pointer;
+            margin: 0 30px;
 
         }
+
 
         a:hover {
             transform: scale(1.2);
             color: blue;
         }
+
+
+        .overskrift:hover {
+            transform: scale(1.1);
+            color: blue;
+        }
+
 
         a {
             color: black;
@@ -149,13 +169,21 @@
             font-family: 'Lato', sans-serif;
             font-size: 0.7rem;
 
+            background-color: #b7ccbe;
+            border-radius: 10px;
+            margin: 10px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 0.7rem;
+
         }
 
 
         .wrap_footer {
             display: flex;
             flex-wrap: wrap;
-            margin: 30px 30px 30px 0;
+            background-color: #EDEDED;
+
+
         }
 
         .col_footer {
@@ -164,6 +192,10 @@
             margin-top: 1.8rem;
             text-align: center;
 
+        }
+
+        ul {
+            padding: 0;
         }
 
         /* slider */
@@ -273,6 +305,11 @@
 
         </div>
         <footer id="footer_bottom">
+            <main>
+                <img src="billeder/logo.svg">
+            </main>
+
+
 
             <div class="wrap_footer">
                 <div class="col_footer">

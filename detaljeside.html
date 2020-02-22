@@ -9,8 +9,10 @@
     <style>
         button {
             background-color: #8483B7;
-            padding: 5px 20px 5px 20px;
             font-size: 2rem;
+            width: 100px;
+            height: 70px;
+            border-radius: 10px;
         }
 
         button:hover {
@@ -18,7 +20,7 @@
         }
 
         #detalje {
-            margin: 220px 0 0 0;
+            margin: 8px;
         }
 
         .boks {
@@ -42,17 +44,22 @@
 
         .pris {
             font-weight: 700;
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+            width: 90%;
         }
 
         img {
             width: 100%;
         }
 
+        /*
         .logo {
-            position: absolute;
-            top: 30px;
-            right: 30px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
         }
+*/
 
 
 
@@ -140,24 +147,104 @@
             flex-basis: 400px;
         }
 
+        /* det kat prøver på */
+        header {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 8px;
+
+        }
+
+        .logo img {
+            width: 67px;
+        }
+
+        h1 {
+            font-family: 'Lato', sans-serif;
+            margin: 7px 0 0 0;
+            text-transform: uppercase;
+        }
+
+        li {
+            list-style-type: none;
+            line-height: 30px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.7rem;
+
+            background-color: #b7ccbe;
+            border-radius: 10px;
+            margin: 10px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 0.7rem;
+
+        }
+
+
+        .wrap_footer {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #EDEDED;
+
+
+        }
+
+        .col_footer {
+            flex-grow: 1;
+            flex-basis: 300px;
+            margin-top: 1.8rem;
+            text-align: center;
+
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        main img {
+            width: 120px;
+            align-self: center;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+
+        #footer_bottom {
+            display: grid;
+            margin-top: 30px;
+            background-color: #EDEDED;
+
+        }
+
+        main {
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        body {
+            margin: 0;
+        }
+
     </style>
 </head>
 
 
 <body>
 
-
-    <div class="logo">
-        <img src="billeder/logo.svg">
-    </div>
-
+    <header>
+        <button>
+            ⬅︎
+        </button>
+        <div class="logo">
+            <img src="billeder/logo.svg">
+        </div>
+    </header>
 
 
 
     <section id="detalje">
-        <button>
-            ⬅︎
-        </button>
+
         <div class="boks">
             <p class="ret_overskrift"></p>
         </div>
@@ -169,15 +256,46 @@
                 <p class="kort"></p>
                 <p class="pris">Pris: </p>
 
-                <p>__________________________________________________________________</p>
+                <!--                <p>___________________________________________________________________</p>-->
+                <h1>VORES MADBOD</h1>
                 <p class="lang"></p>
             </div>
         </div>
     </section>
+    <footer id="footer_bottom">
+        <main>
+            <img src="billeder/logo.svg">
+        </main>
+
+
+
+        <div class="wrap_footer">
+            <div class="col_footer">
+                <ul>
+                    <li><b>Kontakt os</b></li>
+                    <li>Tlf: +45 99999999</li>
+                    <li>Mail: lygtenstreetfood@gmail.com</li>
+                    <li>Lygten 16 - 2400 København</li>
+                </ul>
+            </div>
+            <div class="col_footer">
+                <ul>
+                    <li><b>Åbningstider:</b></li>
+                    <li>Søndag - Onsdag: kl. 14:00 - 20:00</li>
+                    <li>Torsdag: kl. 14:00 - 22:00</li>
+                    <li>Fredag - Lørdag: kl. 12:00 - 01:00</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </footer>
 
 
 
 
+    <!--
     <div class="wrap_footer">
         <div class="col_footer">
             <ul>
@@ -221,6 +339,7 @@
             </ul>
         </div>
     </div>
+-->
 
 
     <script>
@@ -247,7 +366,7 @@
         }
 
         function visPersoner() {
-            detalje.querySelector("button").addEventListener("click", goBack);
+            document.querySelector("button").addEventListener("click", goBack);
 
             retter.feed.entry.forEach(ret => {
                 console.log(ret);
@@ -257,7 +376,7 @@
                     detalje.querySelector("img").src = `billeder/${ret.gsx$billede.$t}.jpg`;
                     detalje.querySelector("h1").textContent = ret.gsx$navn.$t;
                     detalje.querySelector(".kort").textContent = ret.gsx$kort.$t;
-                    detalje.querySelector(".pris").textContent += ret.gsx$pris.$t;
+                    detalje.querySelector(".pris").textContent += ret.gsx$pris.$t + ",-";
                     detalje.querySelector(".lang").textContent += ret.gsx$lang.$t;
                 };
             });
