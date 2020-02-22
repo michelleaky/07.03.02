@@ -59,7 +59,7 @@
         }
 
         header {
-            border: 1px solid black;
+
             justify-self: flex-end;
         }
 
@@ -69,7 +69,7 @@
         }
 
         main {
-            border: 1px solid red;
+
             justify-content: center;
         }
 
@@ -82,10 +82,13 @@
         }
 
         #footer_top {
-            border: 1px solid green;
-            margin-top: -49px;
+
+            margin-top: -30px;
             z-index: 10;
+
         }
+
+        /*        @media only screen and (min-width: 600px*/
 
         /* section bottom */
         #bottom {
@@ -95,18 +98,15 @@
         }
 
         #klik {
-            border: 1px solid pink;
+
             display: grid;
             background-color: #EDEDED;
+
         }
 
-        #image {
-            border: 1px solid yellow;
-        }
+        #image {}
 
-        #footer_bottom {
-            border: 1px solid blue;
-        }
+        #footer_bottom {}
 
         .overskrift {
             background-color: #D8F2E1;
@@ -120,12 +120,17 @@
 
         }
 
-        .overskrift:hover {
+        a:hover {
             transform: scale(1.2);
             color: blue;
         }
 
-        #madbod_image {
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .madbod_image {
             object-fit: cover;
             object-position: top;
             max-width: 100%;
@@ -136,6 +141,87 @@
         #image {
             height: 100vh;
             opacity: 70%;
+        }
+
+        li {
+            list-style-type: none;
+            line-height: 30px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.7rem;
+
+        }
+
+
+        .wrap_footer {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px 30px 30px 0;
+        }
+
+        .col_footer {
+            flex-grow: 1;
+            flex-basis: 300px;
+            margin-top: 1.8rem;
+            text-align: center;
+
+        }
+
+        /* slider */
+        #slider {
+            overflow: hidden;
+            height: 100vh;
+
+        }
+
+        #slider figure {
+            position: relative;
+            width: 400%;
+            margin: 0;
+            left: 0;
+
+            animation: 15s slider infinite;
+            animation-fill-mode: none;
+
+        }
+
+        #slider figure img {
+            width: 25%;
+            float: left;
+        }
+
+        @keyframes slider {
+            0% {
+                left: 0;
+            }
+
+            20% {
+                left: 0;
+            }
+
+            25% {
+                left: -100%;
+            }
+
+            45% {
+                left: -100%;
+            }
+
+            50% {
+                left: -200%;
+            }
+
+            70% {
+                left: -200%;
+            }
+
+            75% {
+                left: -300%;
+            }
+
+            95% {
+                left: -300%;
+            }
+
         }
 
     </style>
@@ -152,21 +238,60 @@
             <img src="billeder/logo.svg">
         </main>
         <footer id="footer_top">
-            <img src="billeder/lyger_3.svg">
+            <img src="billeder/lygter_onrow_2.svg">
+
         </footer>
     </section>
     <section id="bottom">
         <div id="klik">
             <div class="overskrift">
-                <h1>Madboder</h1>
+                <a href="produkter.html">
+                    <h1>Gå til vores madboder</h1>
+                </a>
+
             </div>
         </div>
         <div id="image">
-            <img id="madbod_image" src="billeder/foodstand.jpg">
+            <div id="slider">
+                <figure>
+                    <img class="madbod_image" src="billeder/foodstand.jpg">
+                    <img class="madbod_image" src="billeder/slider1.jpg">
+                    <img class="madbod_image" src="billeder/slider2.jpg">
+                    <img class="madbod_image" src="billeder/slider3.jpg">
+                    <img class="madbod_image" src="billeder/slider4.jpg">
+
+
+
+
+                </figure>
+            </div>
+
+
+
+
+
+
         </div>
         <footer id="footer_bottom">
 
-
+            <div class="wrap_footer">
+                <div class="col_footer">
+                    <ul>
+                        <li><b>Kontakt os</b></li>
+                        <li>Tlf: +45 99999999</li>
+                        <li>Mail: lygtenstreetfood@gmail.com</li>
+                        <li>Lygten 16 - 2400 København</li>
+                    </ul>
+                </div>
+                <div class="col_footer">
+                    <ul>
+                        <li><b>Åbningstider:</b></li>
+                        <li>Søndag - Onsdag: kl. 14:00 - 20:00</li>
+                        <li>Torsdag: kl. 14:00 - 22:00</li>
+                        <li>Fredag - Lørdag: kl. 12:00 - 01:00</li>
+                    </ul>
+                </div>
+            </div>
 
 
 
@@ -176,7 +301,7 @@
 
 
 
-    <footer></footer>
+
 
     <script>
 
