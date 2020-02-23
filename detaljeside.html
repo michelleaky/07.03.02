@@ -16,6 +16,10 @@
         }
 
         button:hover {
+            color: blue;
+        }
+
+        button:hover {
             cursor: pointer;
         }
 
@@ -158,10 +162,21 @@
             justify-content: space-between;
             margin: 8px;
 
+
         }
 
-        .logo img {
+        nav {
+            position: fixed;
+            right: 5px;
+        }
+
+        #menu_knap img {
             width: 67px;
+        }
+
+        #burger li {
+            text-align: center;
+            margin: 5px 0 0 0;
         }
 
         h1 {
@@ -228,6 +243,14 @@
             margin: 0;
         }
 
+        .hidden {
+            display: none;
+        }
+
+        a {
+            color: black;
+        }
+
     </style>
 </head>
 
@@ -238,10 +261,16 @@
         <button>
             ⬅︎
         </button>
-        <div class="logo">
-            <a href="index_2.html"> <img src="billeder/burgermenu.svg"></a>
 
-        </div>
+        <nav>
+            <div id="menu_knap"><img src="billeder/burgermenu.svg"></div>
+            <div id="burger" class="hidden">
+                <ul>
+                    <li><a href="index_2.html">Forside</a></li>
+                    <li><a href="produkter.html">Produktside</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
 
@@ -360,6 +389,7 @@
 
         function start() {
             loadData();
+            document.querySelector("#menu_knap").addEventListener("click", clickMenu);
         }
 
         async function loadData() {
@@ -388,6 +418,28 @@
         function goBack() {
             console.log("tilbage");
             history.back();
+        }
+
+
+
+
+
+
+        function clickMenu() {
+            console.log("clickMenu");
+
+            document.querySelector("#burger").classList.remove("hidden");
+            document.querySelector("#menu_knap").addEventListener("click", clickFjern);
+        }
+
+
+        function clickFjern() {
+            console.log("clickFjern");
+
+            document.querySelector("#burger").classList.add("hidden");
+
+            document.querySelector("#menu_knap").removeEventListener("click", clickFjern);
+            document.querySelector("#menu_knap").addEventListener("click", clickMenu);
         }
 
     </script>
