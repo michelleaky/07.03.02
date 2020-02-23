@@ -156,6 +156,109 @@
             }
         }
 
+
+
+        #menu_knap img {
+            width: 67px;
+        }
+
+        #burger li {
+            text-align: center;
+            margin: 5px 0 0 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            transform: scale(1.2);
+            color: blue;
+        }
+
+        .splashbillede nav {
+            position: fixed;
+            right: 5px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            transform: scale(1.2);
+            color: blue;
+        }
+
+
+
+
+
+
+        li {
+            list-style-type: none;
+            line-height: 30px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.7rem;
+
+            background-color: #b7ccbe;
+            border-radius: 10px;
+            margin: 10px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 0.7rem;
+
+        }
+
+
+        .wrap_footer {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #EDEDED;
+
+
+        }
+
+        .col_footer {
+            flex-grow: 1;
+            flex-basis: 300px;
+            margin-top: 1.8rem;
+            text-align: center;
+
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        #footer_bottom main img {
+            width: 120px;
+            align-self: center;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+
+        #footer_bottom {
+            display: grid;
+            margin-top: 30px;
+            background-color: #EDEDED;
+
+        }
+
+        #footer_bottom main {
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        #footer_bottom body {
+            margin: 0;
+        }
+
     </style>
 </head>
 
@@ -173,6 +276,15 @@
             <div class="overskrift">
                 <h1>Madboder</h1>
             </div>
+            <nav>
+                <div id="menu_knap"><img src="billeder/burgermenu.svg"></div>
+                <div id="burger" class="hidden">
+                    <ul>
+                        <li><a href="index_2.html">Forside</a></li>
+                        <li><a href="produkter.html">Produktside</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
 
     </section>
@@ -206,7 +318,35 @@
 
 
 
+    <footer id="footer_bottom">
+        <main>
+            <img src="billeder/logo.svg">
+        </main>
 
+
+
+        <div class="wrap_footer">
+            <div class="col_footer">
+                <ul>
+                    <li><b>Kontakt os</b></li>
+                    <li>Tlf: +45 99999999</li>
+                    <li>Mail: lygtenstreetfood@gmail.com</li>
+                    <li>Lygten 16 - 2400 København</li>
+                </ul>
+            </div>
+            <div class="col_footer">
+                <ul>
+                    <li><b>Åbningstider:</b></li>
+                    <li>Søndag - Onsdag: kl. 14:00 - 20:00</li>
+                    <li>Torsdag: kl. 14:00 - 22:00</li>
+                    <li>Fredag - Lørdag: kl. 12:00 - 01:00</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </footer>
 
 
 
@@ -232,6 +372,7 @@
         function start() {
             loadData();
             console.log("start");
+            document.querySelector("#menu_knap").addEventListener("click", clickMenu);
         }
 
 
@@ -293,6 +434,27 @@
             })
             this.classList.add("valgt");
             visMad();
+        }
+
+
+
+
+
+        function clickMenu() {
+            console.log("clickMenu");
+
+            document.querySelector("#burger").classList.remove("hidden");
+            document.querySelector("#menu_knap").addEventListener("click", clickFjern);
+        }
+
+
+        function clickFjern() {
+            console.log("clickFjern");
+
+            document.querySelector("#burger").classList.add("hidden");
+
+            document.querySelector("#menu_knap").removeEventListener("click", clickFjern);
+            document.querySelector("#menu_knap").addEventListener("click", clickMenu);
         }
 
     </script>
