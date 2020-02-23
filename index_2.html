@@ -257,6 +257,19 @@
 
         }
 
+        .hidden {
+            display: none;
+        }
+
+        #menu_knap img {
+            width: 67px;
+        }
+
+        #burger li {
+            text-align: center;
+            margin: 5px 0 0 0;
+        }
+
     </style>
 
 </head>
@@ -265,7 +278,15 @@
 
     <section id="top">
         <header>
-            <img src="billeder/burgermenu_hvid.svg">
+            <nav>
+                <div id="menu_knap"><img src="billeder/burgermenu_hvid.svg"></div>
+                <div id="burger" class="hidden">
+                    <ul>
+                        <li><a href="index_2.html">Forside</a></li>
+                        <li><a href="produkter.html">Produktside</a></li>
+                    </ul>
+                </div>
+            </nav>
         </header>
         <main>
             <img src="billeder/logo.svg">
@@ -342,8 +363,28 @@
 
 
     <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            document.querySelector("#menu_knap").addEventListener("click", clickMenu);
+        }
+
+        function clickMenu() {
+            console.log("clickMenu");
+
+            document.querySelector("#burger").classList.remove("hidden");
+            document.querySelector("#menu_knap").addEventListener("click", clickFjern);
+        }
 
 
+        function clickFjern() {
+            console.log("clickFjern");
+
+            document.querySelector("#burger").classList.add("hidden");
+
+            document.querySelector("#menu_knap").removeEventListener("click", clickFjern);
+            document.querySelector("#menu_knap").addEventListener("click", clickMenu);
+        }
 
     </script>
 </body>
