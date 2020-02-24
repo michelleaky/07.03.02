@@ -144,6 +144,8 @@
         a {
             color: black;
             text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
         }
 
         .madbod_image {
@@ -268,6 +270,30 @@
             cursor: pointer;
         }
 
+
+
+
+        @media only screen and (min-width: 768px) {
+            #menu_knap {
+                display: none;
+            }
+
+            #desktop_menu {
+                display: block;
+            }
+        }
+
+        #desktop_menu {
+            margin: 40px;
+            background-color: antiquewhite;
+            padding: 5px;
+            text-align: center;
+        }
+
+        #desktop_menu a {
+            padding: 0 30px 0;
+        }
+
     </style>
 
 </head>
@@ -277,6 +303,11 @@
     <section id="top">
         <header>
             <nav>
+                <div id="desktop_menu" class="hidden">
+                    <a href="index_2.html">Forside<br>_____</a>
+                    <a href="produkter.html">Produktside<br>_____</a>
+                </div>
+
                 <div id="menu_knap"><img src="billeder/burgermenu_hvid.svg"></div>
                 <div id="burger" class="hidden">
                     <ul>
