@@ -83,6 +83,7 @@
 
         }
 
+
         #footer_top {
 
             margin-top: -30px;
@@ -91,6 +92,7 @@
 
         }
 
+
         /*        @media only screen and (min-width: 600px*/
 
         /* section bottom */
@@ -98,6 +100,7 @@
             display: grid;
             grid-column: repeat(1, 1fr);
             grid-template-rows: 300px auto;
+            background-color: #EDEDED;
         }
 
         #klik {
@@ -110,12 +113,9 @@
         #image {}
 
         #footer_bottom {
-            padding-top: 30px;
-            padding-bottom: 20px;
+            display: grid;
             background-color: #EDEDED;
-            margin: 0;
         }
-
 
 
 
@@ -163,7 +163,7 @@
 
         li {
             list-style-type: none;
-            line-height: 50px;
+            line-height: 30px;
             font-family: 'Lato', sans-serif;
             font-size: 0.7rem;
         }
@@ -188,7 +188,7 @@
             flex-grow: 1;
             flex-basis: 300px;
             text-align: center;
-
+            margin-top: 1.8rem;
         }
 
         ul {
@@ -199,7 +199,6 @@
         #slider {
             overflow: hidden;
             height: 100vh;
-
         }
 
         #slider figure {
@@ -216,6 +215,11 @@
         #slider figure img {
             width: 25%;
             float: left;
+        }
+
+        #image {
+
+            justify-self: center;
         }
 
         @keyframes slider {
@@ -249,6 +253,16 @@
 
             95% {
                 left: -300%;
+            }
+
+        }
+
+        @media only screen and (min-width: 768px) {
+            #slider {
+                overflow: hidden;
+                height: 80vh;
+                width: 60vw;
+                margin-top: 50px;
             }
 
         }
@@ -301,12 +315,25 @@
             border-bottom: 1px black solid;
         }
 
+
+        /*        Instragram*/
+
+        #instagram img {
+            width: 70vw;
+        }
+
+        #instagram {
+            justify-self: center;
+            margin: 50px 30px 20px 30px;
+        }
+
     </style>
 
 </head>
 
 <body>
 
+    <!--HEADER, SPLASH BILLEDE OG LYGTER -->
     <section id="top">
         <header>
             <nav>
@@ -332,7 +359,12 @@
 
         </footer>
     </section>
+
+
+    <!--    BOTTOM ER ALT UNDER SPLASH-->
     <section id="bottom">
+
+        <!--       GÅ TIL MADBODER-KNAP-->
         <div id="klik">
             <div class="overskrift">
                 <a href="produkter.html">
@@ -341,6 +373,8 @@
 
             </div>
         </div>
+
+        <!--        SLIDESHOW-->
         <div id="image">
             <div id="slider">
                 <figure>
@@ -349,23 +383,22 @@
                     <img class="madbod_image" src="billeder/slider2.jpg">
                     <img class="madbod_image" src="billeder/slider3.jpg">
                     <img class="madbod_image" src="billeder/slider4.jpg">
-
-
-
-
                 </figure>
             </div>
-
-
-
-
-
-
         </div>
+
+
+        <!--        SE VORES INSTA-->
+        <div id="instagram">
+            <h2>Se med på Instragram</h2>
+            <img src="billeder/instagram.jpg" alt="se med på insta">
+        </div>
+
+
+        <!--
+        FOOTER
+-->
         <footer id="footer_bottom">
-
-
-
 
             <div class="wrap_footer">
                 <div class="col_footer">
