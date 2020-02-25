@@ -174,11 +174,12 @@
         .wrapper {
             display: flex;
             flex-wrap: wrap;
+
         }
 
         .col {
             flex-grow: 1;
-            flex-basis: 400px;
+            flex-basis: 600px;
         }
 
 
@@ -258,9 +259,8 @@
 
         /* MEDIA Q */
 
-        @media only screen and (min-width: 840px) {
+        @media only screen and (min-width: 640px) {
             img {
-                max-height: 90%;
                 max-width: 90%;
             }
 
@@ -293,6 +293,12 @@
             #logo_nav {
                 margin: 0 0 0 28px;
             }
+
+            .col {
+                flex-grow: 1;
+                flex-basis: 200px;
+            }
+
         }
 
     </style>
