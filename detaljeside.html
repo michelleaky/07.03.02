@@ -150,7 +150,7 @@
         .ret_overskrift {
             font-family: 'Permanent Marker', cursive;
             font-size: 2.4rem;
-            background-color: #8483B7;
+            background-color: #D8F2E1;
             border-radius: 10px;
             text-align: center;
             margin: 85px 0 40px 0;
@@ -160,6 +160,10 @@
         .lang {
             max-width: 700px;
             margin: 16px 50px 25px 0;
+            line-height: 1.45rem;
+        }
+
+        .kort {
             line-height: 1.45rem;
         }
 
@@ -258,24 +262,39 @@
         /* MEDIA Q */
 
         @media only screen and (min-width: 840px) {
+            img {
+                max-height: 90%;
+                max-width: 90%;
+            }
+
             #detalje {
-                margin: 30px;
+                margin: 43px;
             }
 
             button {
-                margin: 0 0 0 21px;
+                margin: 0 0 0 35px;
             }
 
             .col_img {
-                padding: 0 20px 0 0;
+                padding: 0;
             }
 
             .col_txt {
                 padding: 0 0 0 20px;
+                margin: 0 0 60px 0;
+                align-self: center;
             }
 
             .ret_overskrift {
                 margin: 85px 0 60px 0;
+            }
+
+            #menu_knap {
+                margin: 0 28px 0 0;
+            }
+
+            #logo_nav {
+                margin: 0 0 0 28px;
             }
         }
 
