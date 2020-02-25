@@ -174,11 +174,26 @@
         #menu_knap img {
             width: 67px;
             cursor: pointer;
+            position: absolute;
+            top: 1vh;
+            right: 1vw;
+            z-index: 10;
         }
 
         #burger li {
             text-align: center;
-            margin: 5px 0 0 0;
+            margin: 10px 0 0 0;
+            font-size: 2rem;
+        }
+
+        #burger {
+            position: absolute;
+            top: 0vh;
+            background-color: #D79C9C;
+            width: 100%;
+            height: 50vh;
+            transition: transform 1s;
+            transform-origin: top right;
         }
 
         .hidden {
@@ -195,7 +210,6 @@
 
 
         .splashbillede nav {
-            position: absolute;
             right: 5px;
             cursor: pointer;
         }
@@ -239,6 +253,7 @@
 
         ul {
             padding: 0;
+            margin-top: 92px;
         }
 
 
