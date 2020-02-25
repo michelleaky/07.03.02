@@ -25,18 +25,30 @@
             margin: 0;
         }
 
+        /*
         h1 {
             font-family: 'Lato', sans-serif;
             margin: 0;
             font-size: calc(1.5rem + 2vw);
-
         }
+        */
+
+        /*
 
         h2 {
             font-family: 'Lato', sans-serif;
             margin: 7px 0 0 0;
             text-transform: uppercase;
         }
+*/
+
+        h1 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            border-bottom: 1px black solid;
+        }
+
 
         p {
             font-family: 'Lato', sans-serif;
@@ -99,14 +111,14 @@
         #bottom {
             display: grid;
             grid-column: repeat(1, 1fr);
-            grid-template-rows: 300px auto;
-            background-color: #EDEDED;
+            /*            grid-template-rows: 300px auto;*/
         }
 
         #klik {
-
-            display: grid;
-            background-color: #EDEDED;
+            margin: 20px 20px 40px 20px;
+            width: 87vw;
+            justify-self: center;
+            /*            display: grid;*/
 
         }
 
@@ -114,7 +126,7 @@
 
         #footer_bottom {
             display: grid;
-            background-color: #EDEDED;
+            background-color: #f9f9f9;
         }
 
 
@@ -128,7 +140,7 @@
             cursor: pointer;
             margin: 0 30px;
             z-index: 30;
-            border-bottom: 1px black solid;
+            /*            border-bottom: 1px black solid;*/
             text-transform: uppercase;
         }
 
@@ -179,8 +191,6 @@
         .wrap_footer {
             display: flex;
             flex-wrap: wrap;
-            background-color: #EDEDED;
-
 
         }
 
@@ -198,7 +208,8 @@
         /* slider start*/
         #slider {
             overflow: hidden;
-            height: 100vh;
+            height: 90vh;
+            width: 70vw;
         }
 
         #slider figure {
@@ -260,11 +271,19 @@
         @media only screen and (min-width: 768px) {
             #slider {
                 overflow: hidden;
-                height: 80vh;
-                width: 60vw;
+                height: 70vh;
+                width: 50vw;
                 margin-top: 50px;
             }
 
+            #image {
+                height: 90vh;
+            }
+
+            #klik {
+                width: 65vw;
+                margin: 80px 20px 5px 20px;
+            }
         }
 
         /* slider slut*/
@@ -324,7 +343,32 @@
 
         #instagram {
             justify-self: center;
-            margin: 50px 30px 20px 30px;
+            margin: 0px 30px 50px 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #instagram h2 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+
+        }
+
+        .insta_semed {
+            border-bottom: 1px black solid;
+        }
+
+        #instagram:hover {
+            opacity: 0.7;
+            color: #D79C9C;
+        }
+
+        @media only screen and (min-width: 768px) {
+            #instagram img {
+                width: 50vw;
+            }
+
         }
 
     </style>
@@ -390,8 +434,9 @@
 
         <!--        SE VORES INSTA-->
         <div id="instagram">
-            <h2>Se med på Instragram</h2>
+            <h2 class="insta_semed">Se med på Instragram</h2>
             <img src="billeder/instagram.jpg" alt="se med på insta">
+            <h2>@LYGTENSTREETFOOD</h2>
         </div>
 
 
