@@ -7,6 +7,30 @@
     <title>Detaljeside</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Permanent+Marker&display=swap" rel="stylesheet">
     <style>
+        /* GENRELLE INDSTILLINGER */
+
+        body {
+            margin: 0;
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+        }
+
+        img {
+            width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+        /* HEADER */
+
         button {
             font-size: 0.8rem;
             border-radius: 10px;
@@ -21,136 +45,6 @@
 
         button:hover {
             cursor: pointer;
-        }
-
-        #detalje {
-            margin: 8px;
-        }
-
-        .boks {
-            background-color: #8483B7;
-            width: 450px;
-            height: 60px;
-            border-radius: 10px;
-            text-align: center;
-
-            margin: 85px 0 30px 0;
-        }
-
-        .ret_overskrift {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 2.5rem;
-        }
-
-        p {
-            font-family: 'Lato', sans-serif;
-        }
-
-        .pris {
-            font-weight: 700;
-            border-bottom: 2px solid black;
-            padding-bottom: 20px;
-            width: 90%;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        /*
-        .logo {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        }
-*/
-
-
-
-
-        .lang {
-            max-width: 700px;
-            margin: 0 50px 0 0;
-        }
-
-        li {
-            list-style-type: none;
-            line-height: 30px;
-            font-family: 'Permanent Marker', cursive;
-            font-size: 0.7rem;
-        }
-
-
-        /*
-        .wrap_footer {
-        display: flex;
-        flex-wrap: wrap;
-
-        text-justify: center;
-        }
-*/
-
-        .col_footer {
-            flex-grow: 1;
-            flex-basis: 300px;
-            margin-top: 1.8rem;
-            text-align: center;
-            line-height: 30px;
-        }
-
-        .smykning {
-            background-color: #b7ccbe;
-            border-radius: 10px;
-            width: 150px;
-            height: 30px;
-            margin: 10px;
-
-        }
-
-        .smykning1,
-        .smykning2,
-        .smykning3 {
-            background-color: #b7ccbe;
-            border-radius: 10px;
-            width: 220px;
-            height: 30px;
-            margin: 10px;
-        }
-
-        /*
-        @media only screen and (min-width: 500px) {
-        .mad_billede {
-        width: 90%;
-        }
-
-        .wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        }
-
-        .col {
-        flex-grow: 1;
-        flex-basis: 200px;
-        }
-        }
-*/
-
-        .footer_smykning {
-            background-color: aqua;
-        }
-
-        .mad_billede {
-            width: 90%;
-        }
-
-        .wrapper {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .col {
-            flex-grow: 1;
-            flex-basis: 400px;
         }
 
         /* det kat prøver på */
@@ -228,25 +122,6 @@
             padding-top: 30px;
         }
 
-        #footer_bottom {
-            display: grid;
-            margin-top: 30px;
-            background-color: #EDEDED;
-
-        }
-
-        main {
-            justify-content: center;
-            margin: 0 auto;
-        }
-
-        body {
-            margin: 0;
-        }
-
-        .hidden {
-            display: none;
-        }
 
         a {
             color: black;
@@ -264,6 +139,120 @@
             background-image: url(billeder/logo.svg);
             width: 75px;
             height: 75px;
+        }
+
+
+
+
+
+
+
+
+
+
+        /* SITE */
+
+        #detalje {
+            margin: 8px;
+        }
+
+        .boks {
+            background-color: #8483B7;
+            width: 450px;
+            height: 60px;
+            border-radius: 10px;
+            text-align: center;
+
+            margin: 85px 0 30px 0;
+        }
+
+        .ret_overskrift {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.5rem;
+        }
+
+
+        .lang {
+            max-width: 700px;
+            margin: 0 50px 0 0;
+        }
+
+        .pris {
+            font-weight: 700;
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+            width: 90%;
+        }
+
+        .mad_billede {
+            width: 90%;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col {
+            flex-grow: 1;
+            flex-basis: 400px;
+        }
+
+
+
+
+
+
+
+
+
+
+        /* FOOTER */
+
+        .col_footer {
+            flex-grow: 1;
+            flex-basis: 300px;
+            margin-top: 1.8rem;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .smykning {
+            background-color: #b7ccbe;
+            border-radius: 10px;
+            width: 150px;
+            height: 30px;
+            margin: 10px;
+
+        }
+
+        .smykning1,
+        .smykning2,
+        .smykning3 {
+            background-color: #b7ccbe;
+            border-radius: 10px;
+            width: 220px;
+            height: 30px;
+            margin: 10px;
+        }
+
+        .footer_smykning {
+            background-color: aqua;
+        }
+
+        #footer_bottom {
+            display: grid;
+            margin-top: 30px;
+            background-color: #EDEDED;
+        }
+
+        main {
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
         }
 
     </style>
