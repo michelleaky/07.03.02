@@ -80,12 +80,13 @@
 
         #menu_knap img {
             width: 67px;
-            margin: 0 10px 0 0;
+            /*            margin: 0 10px 0 0;*/
         }
 
         #burger li {
             text-align: center;
-            margin: 5px 0 0 0;
+            margin: 10px 0 0 0;
+            font-size: 2rem;
         }
 
 
@@ -125,7 +126,6 @@
             background-image: url(billeder/logo.svg);
             width: 75px;
             height: 75px;
-            margin: 0 0 0 10px;
         }
 
 
@@ -305,6 +305,105 @@
 
         /*HEADER MENU*/
 
+        @media only screen and (min-width: 768px) {
+
+            /*Burger fjernes og desktop menu vises*/
+            #menu_knap {
+                display: none;
+            }
+
+            #desktop_menu {
+                display: block;
+
+            }
+        }
+
+        #desktop_menu {
+            /*Header-menu i desktop*/
+
+            background-color: #DFEFE4;
+            padding: 5px;
+            text-align: center;
+            border-radius: 9px;
+        }
+
+        #desktop_menu a {
+            /*Om teksten i header menuen*/
+            padding: 0 30px 0;
+            border-bottom: 1px black solid;
+        }
+
+        a:hover {
+            color: #D79C9C;
+        }
+
+        header {
+
+            justify-self: flex-end;
+            padding: 1rem;
+        }
+
+
+
+
+
+        a {
+            color: black;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+        }
+
+
+
+        .madbod_image {
+            object-fit: cover;
+            object-position: top;
+            max-width: 100%;
+            height: 100vh;
+
+        }
+
+        #image {
+            height: 100vh;
+            opacity: 70%;
+        }
+
+        li {
+            list-style-type: none;
+            line-height: 30px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.7rem;
+        }
+
+        #burger li {
+            list-style-type: none;
+            line-height: 80px;
+            font-family: 'Lato', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        #burger {
+            position: absolute;
+            top: 0vh;
+
+            left: 0vw;
+            background-color: #DFEFE4;
+            width: 100%;
+            height: 50vh;
+            transition: transform 1s;
+            transform-origin: top right;
+        }
+
+        #menu_knap img {
+            width: 67px;
+            cursor: pointer;
+            position: absolute;
+            top: 1vh;
+            right: 1vw;
+            z-index: 10;
+
     </style>
 </head>
 
@@ -325,15 +424,15 @@
             <a href="index_2.html">Forside</a>
             <a href="produkter.html">Madboder</a>
         </div>
-        <nav>
-            <div id="menu_knap"><img src="billeder/burgermenu.svg"></div>
-            <div id="burger" class="hidden">
-                <ul>
-                    <li><a href="index_2.html">Forside</a></li>
-                    <li><a href="produkter.html">Produktside</a></li>
-                </ul>
-            </div>
-        </nav>
+
+        <div id="menu_knap"><img src="billeder/burgermenu.svg"></div>
+        <div id="burger" class="hidden">
+            <ul>
+                <li><a href="index_2.html">Forside</a></li>
+                <li><a href="produkter.html">Produktside</a></li>
+            </ul>
+        </div>
+
     </header>
 
 
