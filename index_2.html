@@ -127,14 +127,15 @@
         #bottom {
             display: grid;
             grid-column: repeat(1, 1fr);
+            grid-template-rows: 250px auto;
             /*            grid-template-rows: 300px auto;*/
         }
 
         #klik {
-            margin: 20px 20px 40px 20px;
+
             width: 87vw;
             justify-self: center;
-            /*            display: grid;*/
+            display: grid;
 
         }
 
@@ -154,7 +155,7 @@
             align-self: center;
             transition: 0.5s;
             cursor: pointer;
-            margin: 0 30px;
+
             z-index: 30;
             /*            border-bottom: 1px black solid;*/
             text-transform: uppercase;
@@ -226,10 +227,9 @@
             flex-grow: 1;
             flex-basis: 300px;
             text-align: center;
-            <<<<<<< HEAD padding-top: 30px;
+            padding-top: 30px;
             padding-bottom: 30px;
 
-            =======>>>>>>>origin/master
         }
 
         ul {
@@ -242,7 +242,7 @@
         #slider {
             overflow: hidden;
             height: 90vh;
-            width: 70vw;
+
         }
 
         #slider figure {
@@ -316,6 +316,14 @@
             #klik {
                 width: 65vw;
                 margin: 80px 20px 5px 20px;
+            }
+
+            .overskrift {
+                margin: 0 30px;
+            }
+
+            #slider {
+                width: 70vw;
             }
         }
 
