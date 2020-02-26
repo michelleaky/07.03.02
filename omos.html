@@ -1,0 +1,370 @@
+ <!DOCTYPE html>
+ <html lang="da">
+
+ <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lygten Streetfood</title>
+     <link rel="apple-touch-icon" sizes="180x180" href="myicons/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="myicons/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="myicons/favicon-16x16.png">
+     <link rel="manifest" href="myicons/site.webmanifest">
+     <link rel="mask-icon" href="myicons/safari-pinned-tab.svg" color="#5bbad5">
+     <link rel="shortcut icon" href="myicons/favicon.ico">
+     <meta name="msapplication-TileColor" content="#da532c">
+     <meta name="msapplication-config" content="myicons/browserconfig.xml">
+     <meta name="theme-color" content="#ffffff">
+     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Permanent+Marker&display=swap" rel="stylesheet">
+     <style>
+         /* GENRELLE INDSTILLINGER */
+
+         body {
+             margin: 0;
+         }
+
+         p {
+             font-family: 'Lato', sans-serif;
+         }
+
+
+         h1 {
+             font-family: 'Lato', sans-serif;
+             margin: 7px 0 0 0;
+             text-transform: uppercase;
+         }
+
+         img {
+             width: 50vw;
+
+         }
+
+
+
+
+
+
+
+
+         /* HEADER */
+
+         button {
+             font-size: 0.8rem;
+             border-radius: 10px;
+             border: none;
+             position: absolute;
+             top: 140px;
+             padding: 0;
+             margin: 0 0 0 14px;
+         }
+
+
+         button:hover {
+             cursor: pointer;
+         }
+
+         /* det kat prøver på */
+         header {
+             display: grid;
+             grid-template-columns: repeat(1, 1fr);
+             display: flex;
+             flex-direction: row;
+             justify-content: space-between;
+             margin: 8px;
+         }
+
+         nav {
+             position: absolute;
+             right: 5px;
+             cursor: pointer;
+         }
+
+         #menu_knap img {
+             width: 67px;
+             margin: 0 10px 0 0;
+         }
+
+         #burger li {
+             text-align: center;
+             margin: 5px 0 0 0;
+         }
+
+
+
+         li {
+             list-style-type: none;
+             line-height: 30px;
+             font-family: 'Lato', sans-serif;
+             font-size: 0.7rem;
+
+
+
+         }
+
+         ul {
+             padding: 0;
+         }
+
+         main img {
+             width: 120px;
+             align-self: center;
+             margin: 0 auto;
+             padding-top: 30px;
+         }
+
+
+         a {
+             color: black;
+             text-decoration: none;
+         }
+
+
+
+
+
+         #logo_nav {
+             background-image: url(billeder/logo.svg);
+             width: 75px;
+             height: 75px;
+             margin: 0 0 0 10px;
+         }
+
+
+
+
+
+
+
+
+
+
+         /* SITE */
+
+         .wrapper {
+             margin: 20px;
+         }
+
+         .ret_overskrift {
+             font-family: 'Permanent Marker', cursive;
+             font-size: 2.4rem;
+             background-color: #D8F2E1;
+             border-radius: 10px;
+             text-align: center;
+             margin: 85px 0 40px 0;
+         }
+
+
+         .wrapper {
+             display: flex;
+             flex-wrap: wrap;
+         }
+
+         .col_img {
+             flex-grow: 1;
+             flex-basis: 300px;
+         }
+
+         .col_txt {
+             flex-grow: 2;
+             flex-basis: 400px;
+         }
+
+
+
+
+
+
+
+
+
+
+         /* FOOTER */
+
+         .col_footer {
+             flex-grow: 1;
+             flex-basis: 300px;
+             margin-top: 1.8rem;
+             text-align: center;
+             line-height: 30px;
+         }
+
+
+         #footer_bottom {
+             display: grid;
+             margin-top: 30px;
+             background-color: #f9f9f9;
+         }
+
+
+         .hidden {
+             display: none;
+         }
+
+         /*
+.wrap_footer {
+display: flex;
+flex-wrap: wrap;
+}
+
+.col_footer {
+flex-grow: 1;
+flex-basis: 300px;
+text-align: center;
+margin-top: 1.8rem;
+}
+*/
+
+         .col {
+             text-align: center;
+         }
+
+
+
+
+         /* MEDIA Q */
+
+         @media only screen and (min-width: 768px) {
+             img {
+                 max-height: 90%;
+                 max-width: 90%;
+             }
+
+             .wrapper {
+                 margin: 43px;
+             }
+
+             button {
+                 margin: 0 0 0 35px;
+             }
+
+             /*
+.col_img {
+padding: 0;
+}
+
+img {
+width: 20vw;
+}
+
+.col_txt {
+padding: 0 0 0 0;
+margin: 0 0 0 100px;
+align-self: center;
+max-width: 500px;
+text-align: left;
+}
+
+.ret_overskrift {
+margin: 85px 0 60px 0;
+}*/
+
+             #menu_knap {
+                 margin: 0 28px 0 0;
+             }
+
+             #logo_nav {
+                 margin: 0 0 0 28px;
+             }
+         }
+
+     </style>
+ </head>
+
+
+ <body>
+
+     <header>
+
+         <a id="logo_nav" href="index_2.html"></a>
+
+
+         <nav>
+             <div id="menu_knap"><img src="billeder/burgermenu.svg"></div>
+             <div id="burger" class="hidden">
+                 <ul>
+                     <li><a href="index_2.html">Forside</a></li>
+                     <li><a href="produkter.html">Produktside</a></li>
+                 </ul>
+             </div>
+         </nav>
+     </header>
+
+
+
+
+     <p class="ret_overskrift">Lygten Street Food</p>
+
+     <div class="wrapper">
+         <div class="col col_img">
+             <img src="billeder/omos_billede.jpeg" alt="chef">
+         </div>
+         <div class="col col_txt">
+             <p>
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint cumque quia dolore deserunt veniam neque consequuntur odio, saepe suscipit, atque nihil quos! Vero consectetur, exercitationem sed cum perspiciatis alias natus?
+             </p>
+         </div>
+
+     </div>
+
+
+     <footer id="footer_bottom">
+
+         <div class="wrap_footer">
+             <div class="col_footer">
+                 <ul>
+                     <li><b>Kontakt os</b></li>
+                     <li>Tlf: +45 99999999</li>
+                     <li>Mail: lygtenstreetfood@gmail.com</li>
+                     <li>Lygten 16 - 2400 København</li>
+                 </ul>
+             </div>
+             <div class="col_footer">
+                 <ul>
+                     <li><b>Åbningstider:</b></li>
+                     <li>Søndag - Onsdag: kl. 14:00 - 20:00</li>
+                     <li>Torsdag: kl. 14:00 - 22:00</li>
+                     <li>Fredag - Lørdag: kl. 12:00 - 01:00</li>
+                 </ul>
+             </div>
+         </div>
+
+
+
+     </footer>
+
+
+
+
+
+
+     <script>
+         document.addEventListener("DOMContentLoaded", start);
+
+         function start() {
+
+             document.querySelector("#menu_knap").addEventListener("click", clickMenu);
+         }
+
+
+
+
+         function clickMenu() {
+             console.log("clickMenu");
+
+             document.querySelector("#burger").classList.remove("hidden");
+             document.querySelector("#menu_knap").addEventListener("click", clickFjern);
+         }
+
+
+         function clickFjern() {
+             console.log("clickFjern");
+
+             document.querySelector("#burger").classList.add("hidden");
+
+             document.querySelector("#menu_knap").removeEventListener("click", clickFjern);
+             document.querySelector("#menu_knap").addEventListener("click", clickMenu);
+         }
+
+     </script>
+ </body>
+
+ </html>
