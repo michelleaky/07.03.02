@@ -233,7 +233,7 @@
 
 
 
-        a:hover {
+        .desk_menu:hover {
             transform: scale(1.2);
             color: #DFEFE4;
 
@@ -352,6 +352,7 @@
         #logo_nav {
             width: 75px;
             height: 75px;
+            background-image: url(billeder/logo.svg);
         }
 
     </style>
@@ -369,7 +370,7 @@
 
     <section class="splash">
         <header>
-            <img id="logo_nav" src="billeder/logo.svg">
+            <a id="logo_nav" href="index_2.html"></a>
         </header>
         <div class="splashbillede">
             <div class="overskrift">
@@ -377,8 +378,11 @@
             </div>
 
             <div id="desktop_menu" class="hidden">
-                <a href="produkter.html">Madboder</a>
-                <a href="omos.html">Om</a>
+
+                <a class="desk_menu" href="produkter.html">Madboder</a>
+                <a class="desk_menu" href="omos.html">Om</a>
+
+
             </div>
 
 
