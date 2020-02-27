@@ -13,7 +13,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="myicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Permanent+Marker&display=swap" rel="stylesheet">
     <title>Lygten Streetfood</title>
 
 
@@ -136,7 +136,7 @@
 
         .overskrift {
             /*container for teksten "madboder"*/
-            background-color: #D79C9C;
+            background-color: #D8F2E1;
             text-align: center;
             padding: 0 30px;
             border-radius: 12px;
@@ -245,7 +245,7 @@
 
         .desk_menu:hover {
             transform: scale(1.2);
-            color: #DFEFE4;
+            color: #D79C9C;
 
         }
 
@@ -320,6 +320,7 @@
             margin: 0.5rem;
             right: 0;
             border-radius: 9px;
+            margin: 1rem;
         }
 
 
@@ -343,7 +344,7 @@
 
         #desktop_menu {
             /*Header-menu i desktop*/
-            background-color: #D79C9C;
+            background-color: #D8F2E1;
             padding: 5px;
             text-align: center;
         }
@@ -416,7 +417,7 @@
     <main class="section_menu">
         <nav class="menu">
             <h1 class="mad_overskrift">Alt mad</h1>
-            <button class="filter" data-kategori="alle">Alt mad</button>
+            <button class="filter valgt" data-kategori="alle">Alt mad</button>
             <button class="filter" data-kategori="Olaf's S'morebread">Olaf's S'morebread</button>
             <button class="filter" data-kategori="ToGOGO Burger">ToGOGO Burger</button>
             <button class="filter" data-kategori="Havets Perle">Havets Perle</button>
@@ -475,9 +476,10 @@
 
 
     <script>
-        const endpoint = "https://spreadsheets.google.com/feeds/list/1XFYyTvPy3jURzHBPV1ewCOI9jArC_oPQK4GWz7wbMRk/od6/public/values?alt=json";
-        let mad = {}
-        let filter = "alle";
+        const endpoint = // arrayet som objekt
+            "https://spreadsheets.google.com/feeds/list/1XFYyTvPy3jURzHBPV1ewCOI9jArC_oPQK4GWz7wbMRk/od6/public/values?alt=json";
+        let mad = {} //array
+        let filter = "alle"; //sætter filtering til at være alle fra starten
         const container = document.querySelector(".data-container");
         const template = document.querySelector("template");
 
