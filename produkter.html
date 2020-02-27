@@ -475,9 +475,10 @@
 
 
     <script>
-        const endpoint = "https://spreadsheets.google.com/feeds/list/1XFYyTvPy3jURzHBPV1ewCOI9jArC_oPQK4GWz7wbMRk/od6/public/values?alt=json";
-        let mad = {}
-        let filter = "alle";
+        const endpoint = // arrayet som objekt
+            "https://spreadsheets.google.com/feeds/list/1XFYyTvPy3jURzHBPV1ewCOI9jArC_oPQK4GWz7wbMRk/od6/public/values?alt=json";
+        let mad = {} //array
+        let filter = "alle"; //sætter filtering til at være alle fra starten
         const container = document.querySelector(".data-container");
         const template = document.querySelector("template");
 
