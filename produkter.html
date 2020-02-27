@@ -111,16 +111,23 @@
         /* SITE */
 
         .splash {
+            /*section splash, fungere som en container*/
             height: 50vh;
+            /*relativ størrelse */
             display: grid;
+            /*bruges som grid container*/
 
         }
 
 
         .splashbillede {
+            /*container for splashbilledet */
+            /* splashbilledet indsættes*/
             background-image: url(billeder/produkt_splash%20.jpg);
             background-size: cover;
             background-repeat: no-repeat;
+
+            /*grid i grid, bruges senere til at placrer .overskrift i midten*/
             display: grid;
             background-position: center;
         }
@@ -128,10 +135,13 @@
 
 
         .overskrift {
+            /*container for teksten "madboder"*/
             background-color: #D79C9C;
             text-align: center;
             padding: 0 30px;
             border-radius: 12px;
+
+            /* placrer elementet i midten af .splashbillede*/
             justify-self: center;
             align-self: center;
         }
@@ -317,12 +327,15 @@
 
         @media only screen and (min-width: 768px) {
 
-            /*Burger fjernes og desktop menu vises*/
+            /*Burger skjules (fylder intet) */
             #menu_knap {
+                /*container for brugermenuen*/
                 display: none;
             }
 
+            /*desktop menu vises*/
             #desktop_menu {
+                /*container for desktop menu */
                 display: block;
 
             }
@@ -342,14 +355,15 @@
         }
 
         header {
+            /* placerer logoet oppe i hjørnet */
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
             position: absolute;
             margin: 8px
         }
 
         #logo_nav {
+
+            /* indsætter loget med ønsket bredde og højde*/
             width: 75px;
             height: 75px;
             background-image: url(billeder/logo.svg);
@@ -468,21 +482,17 @@
         const template = document.querySelector("template");
 
 
+        // Sikre indlæsningen af hele siden
         document.addEventListener("DOMContentLoaded", start);
 
-
-
-
-
-
-
+        // kalder funktionen loaddata og sætter en addventlistener på vores burgermenu
         function start() {
             loadData();
             console.log("start");
             document.querySelector("#menu_knap").addEventListener("click", clickMenu);
         }
 
-
+        // her hentes json data og sendes videre til funktionen visMad
         async function loadData() {
             const response = await fetch(endpoint);
             mad = await response.json();
@@ -492,12 +502,9 @@
             visMad();
         }
 
-
-
-
-
+        //vis mad sætter hver enkelt ret ind i html. Den kopiere templaten
         function visMad() {
-            container.innerHTML = "";
+            container.innerHTML = ""; //html container tømmes får den for fyldt nyt indhold i
             mad.feed.entry.forEach(mad => {
                 if (filter == "alle" || filter == mad.gsx$madbod.$t) {
 
@@ -508,30 +515,26 @@
                     klon.querySelector("img").alt = "Portæt af" + mad.gsx$navn.$t;
                     klon.querySelector("h2").textContent = mad.gsx$navn.$t;
                     klon.querySelector(".pris").textContent += mad.gsx$pris.$t + ",-";
+
+                    //Når man klikker på en ret, ryger man over på detaljesiden med dens ret id
                     klon.querySelector(".mad").addEventListener("click", () => {
                         location.href = "detaljeside.html?id=" + mad.gsx$id.$t
                     });
                     container.appendChild(klon);
                     addEventlistenersToButtons();
                 }
-            })
+            }) //tager hver enkelte ret
 
         }
 
-
-
-
+        // funktionen der tilføjer en addeventlistener på ALLE filteringsknapper
         function addEventlistenersToButtons() {
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.addEventListener("click", filtrering);
             })
         }
 
-
-
-
-
-
+        //funktionen der filtere indholdet på siden, alt efter hvilken knap man har tryket på
         function filtrering() {
             console.log("filter");
             filter = this.dataset.kategori;
